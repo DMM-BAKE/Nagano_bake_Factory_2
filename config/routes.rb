@@ -14,10 +14,14 @@ Rails.application.routes.draw do
    resources :customers, only: [:index, :show, :edit, :update]
    end
 
+   namespace :public do
    resources :genres, only: [:index]
    resources :addresses, only: [:index, :create, :edit, :update]
    resources :cart_items, only: [:index, :show]
    resources :items, only: [:index, :show]
    resources :orders, only: [:index, :show, :new, :confirm, :create, :thanks]
    resources :customers, only: [:show, :quit, :out, :edit, :update]
+   end
+
+   
 end
