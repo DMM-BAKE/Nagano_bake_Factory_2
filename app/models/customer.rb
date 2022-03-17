@@ -14,12 +14,12 @@ class Customer < ApplicationRecord
   validates :phone_number, length: { maximum: 13 }
   # validates :encrypted_password, length: { maximum: 15 }
 
+#別々で保存された名前をfull_nameで合わせて定義
   def full_name
-    self.first_name + self.last_name
+    self.last_name + self.first_name
   end
   
-  def full_name_
-    self.first_name_kana + self.last_name_kana
+  def full_name_kana
+    self.last_name_kana + self.first_name_kana
   end
-
 end

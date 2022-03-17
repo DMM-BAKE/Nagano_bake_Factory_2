@@ -21,7 +21,6 @@ Rails.application.routes.draw do
    resources :items, only: [:index, :show]
    resources :orders, only: [:index, :show, :new, :confirm, :create, :thanks]
    resources :customers, only: [:show, :quit, :out, :edit, :update]
+   get 'quit' => 'customers#quit'
    end
-
-   
 end
