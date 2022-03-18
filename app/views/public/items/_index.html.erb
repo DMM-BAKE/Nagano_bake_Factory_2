@@ -1,0 +1,8 @@
+<div class="items">
+  <% items each do |item| %>
+    <div class="item-content">
+      <%= image_tag item.item_image %>
+      <%= item.name %>
+      <%= item.price %>
+    </div>
+</div>
