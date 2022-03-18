@@ -60,3 +60,4 @@ gem 'kaminari'
 gem 'image_processing'
 gem 'acts-as-taggable-on', '~> 7.0'
 gem 'dotenv-rails'
+gem "jquery-rails"

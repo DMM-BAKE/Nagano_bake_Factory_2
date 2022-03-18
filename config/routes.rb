@@ -14,10 +14,14 @@ Rails.application.routes.draw do
    resources :customers, only: [:index, :show, :edit, :update]
    end
 
-   resources :genres, only: [:index]
-   resources :addresses, only: [:index, :create, :edit, :update]
-   resources :cart_items, only: [:index, :show]
-   resources :items, only: [:index, :show]
-   resources :orders, only: [:index, :show, :new, :confirm, :create, :thanks]
-   resources :customers, only: [:show, :quit, :out, :edit, :update]
+   namespace :public do
+   resource :genres, only: [:index]
+   resource :addresses, only: [:index, :create, :edit, :update]
+   resource :cart_items, only: [:index, :show]
+   resource :items, only: [:index, :show]
+   resource :orders, only: [:index, :show, :new, :confirm, :create, :thanks]
+   resource :customers, only: [:show, :quit, :out, :edit, :update]
+   get '/quit' => 'customers#quit', as: 'quit'
+   patch '/withdrawal' => 'customers#withdrawal', as: 'withdrawal'
+   end
 end
