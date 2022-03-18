@@ -22,8 +22,8 @@ class Customer < ApplicationRecord
     self.last_name_kana + self.first_name_kana
   end
   # is_deletedがfalseならturuを返す設定
-  def active_for_authentication?
-    super && (is_deleted == false)
-  end
+  # def active_for_authentication?
+  #   super && (is_deleted == false)
+  # end
   
 end
