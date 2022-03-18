@@ -4,7 +4,7 @@
 
       <h3>会員情報編集</h3>
 
-      <%= form_with model: @customer, url:public_customer_path, method: :PATCH do |f| %>
+      <%= form_with model: @customer, url:public_customers_path, method: :PATCH do |f| %>
       <div class="my-2">
         <%= f.label :"名前" %>
         <%= f.text_field :last_name, autofocus: true %>

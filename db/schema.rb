@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 2022_03_16_080322) do
     t.string "postal_code"
     t.string "address"
     t.string "phone_number"
-    t.boolean "is_deleted", default: true, null: false
+    t.boolean "is_deleted", default: false
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
