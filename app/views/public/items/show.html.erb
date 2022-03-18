@@ -11,6 +11,12 @@
         </h2>
         <p><%= @item.description %></p>
         <p>¥<%= @order_detail.price %></p>
+          
+          <%= form_with moled:@cart_item do |f| %>
+          <%= hidden_field_tag :name, @item.name %>
+          <%= hidden_field_tag :item_id, @item.id %>
+          <%= f.select :item_count, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"],["5", "5"]], include_blank: "選択して下さい" %>
+          <%= f.submit 'カートに入れる'%>
       </div>
     </div>
   </div>
