@@ -1,4 +1,5 @@
 class Genre < ApplicationRecord
-  acts_as_taggable
   has_many :items
+
+  validates :name, length: { maximum: 20 }
 end
