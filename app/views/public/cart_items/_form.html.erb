@@ -1,0 +1,6 @@
+<%= form_with moled:cart_item, url: public_cart_items_path(cart_item), local: true do |f| %>
+          <%= hidden_field_tag :name, item.name %>
+          <%= hidden_field_tag :item_id, item.id %>
+          <%= f.select :item_count, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"],["5", "5"]], include_blank: "選択して下さい" %>
+          <%= f.submit 'カートに入れる'%>
+          <% end %>
