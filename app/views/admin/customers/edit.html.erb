@@ -1,7 +1,8 @@
 <h4>header</h4>
+<%= render 'layouts/errors', obj: @customer %>
 <h3><%= @customer.full_name %>さんの会員情報編集</h3>
 
-<%= form_with model: @customer, url:public_customers_path, method: :PATCH do |f| %>
+<%= form_with model: @customer, url:admin_customer_path do |f| %>
   <table class="w-100 admin-customer-show">
     <tr class="row pb-3">
       <td class="col-md-2">会員ID</td>
@@ -24,7 +25,7 @@
     <tr class="row pb-3">
       <td class="col-md-2">郵便番号</td>
       <td class="col-md-10">
-        <%= f.text_field :postcode %>
+        <%= f.text_field :postal_code %>
       </td>
     </tr>
     <tr class="row pb-3">
@@ -36,7 +37,7 @@
     <tr class="row pb-3">
       <td class="col-md-2">電話番号</td>
       <td class="col-md-10">
-        <%= f.text_field :phone %>
+        <%= f.text_field :phone_number %>
       </td>
     </tr>
     <tr class="row pb-3">
