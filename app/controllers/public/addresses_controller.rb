@@ -1,4 +1,5 @@
 class Public::AddressesController < ApplicationController
+
   def index
     @addresses = Address.all
     @address = Address.new
@@ -7,10 +8,10 @@ class Public::AddressesController < ApplicationController
   def create
     @address = Address.new(address_params)
     @address.customer_id = current_customer.id
-    @address = current_customer.addresses
+    # @address = current_customer.addresses
     if @address.save
         flash[:notice] = "新規配送先を登録しました"
-    redirect_to public_addressses_path
+    redirect_to 'index'
     end
   end
 
@@ -39,7 +40,6 @@ class Public::AddressesController < ApplicationController
   private
 
   def address_params
-    params.require(:address
-    ).permit(:postal_code, :address, :name)
+    params.require(:address).permit(:postal_code, :address, :name)
   end
 end

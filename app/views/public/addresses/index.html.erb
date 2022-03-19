@@ -45,10 +45,10 @@
                 <%= address.name %>
               </td>
               <td>
-                <%= link_to "編集する",edit_customers_address_path(shipping_address), class: "glyphicon glyphicon-pencil btn-sm btn-primary" %>
+                <%= link_to "編集する", edit_public_address_path(address), class: "glyphicon glyphicon-pencil btn-sm btn-primary" %>
               </td>
               <td>
-                <%= link_to "削除する",customers_address_path(address), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"} %>
+                <%= link_to "削除する",public_address_path(address), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "glyphicon glyphicon-pencil btn-sm btn-danger" %>
               </td>
             </tr>
           <% end %>
