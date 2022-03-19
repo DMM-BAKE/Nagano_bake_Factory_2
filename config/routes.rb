@@ -24,4 +24,5 @@ Rails.application.routes.draw do
    get '/quit' => 'customers#quit', as: 'quit'
    patch '/withdrawal' => 'customers#withdrawal', as: 'withdrawal'
    end
+
 end
