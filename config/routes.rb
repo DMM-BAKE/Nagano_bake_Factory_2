@@ -15,10 +15,10 @@ Rails.application.routes.draw do
    end
 
    namespace :public do
-   resource :genres, only: [:index]
-   resource :addresses, only: [:index, :create, :edit, :update]
-   resource :cart_items, only: [:index, :show]
-   resource :items, only: [:index, :show]
+   resources :genres, only: [:index]
+   resources :addresses, only: [:index, :create, :edit, :update, :destroy]
+   resources :cart_items, only: [:index, :show]
+   resources :items, only: [:index, :show]
    resource :orders, only: [:index, :show, :new, :confirm, :create, :thanks]
    resource :customers, only: [:show, :quit, :out, :edit, :update]
    get '/quit' => 'customers#quit', as: 'quit'
