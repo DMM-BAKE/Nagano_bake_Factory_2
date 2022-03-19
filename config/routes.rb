@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
 
    resources :addresses, only: [:index, :create, :edit, :update]
-   resources :cart_items, only: [:index, :show, :destroy, :edit, :create]
+   resources :cart_items, only: [:index, :show, :destroy, :edit, :create, :update]
    resources :items, only: [:index, :show]
    resources :orders, only: [:index, :show, :new, :confirm, :create, :thanks]
 
