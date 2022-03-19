@@ -16,11 +16,11 @@
       <td>
         <%= form_with moled:@cart_item do |f| %>
         <%= f.select :item_count, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"],["5", "5"]], include_blank: "#{cart_items.item_count}" %>
-        <%= f.submit '変更'%>
+        <%= f.submit '変更'%><% end %>
       </td>
       <td><%= link_to '削除する', public_cart_items_paht(cart_item), method: :delete %></td>
     </tr>
-  <% end %>
+
     <tr>
       <td><%= link_to '買い物を続ける', public_items_paht %></td>
       <td>合計金額</td>

@@ -6,17 +6,18 @@ class Public::CartItemsController < ApplicationController
 
   def new
     @cart_item = CartItem.new
+  end
 
   def create
     @cart_item = CartItem.new(params[:id])
     @cart_item.customer_id = current_customer.id
     @cart_item.save
-    redirect_to :index
+    redirect_to public_cart_items_path
   end
 
   def update
     @cart_item.update(params)
-    redirect_to public_cart_items_paht
+    redirect_to public_cart_items_path
 
   end
 
@@ -31,5 +32,12 @@ class Public::CartItemsController < ApplicationController
     redirect_to public_cart_items_paht
   end
 
-  end
+
+
+  # private
+
+  # def cart_item_params
+  #   params.require(:cart_items).permit(:customer_id, :item_count)
+  # end
+
 end
