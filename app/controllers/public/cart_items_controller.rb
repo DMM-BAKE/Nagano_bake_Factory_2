@@ -1,6 +1,7 @@
 class Public::CartItemsController < ApplicationController
   def index
     @cart_items = CartItem.where(customer_id: current_user.id)
+    @cart_item = CartItem.new
   end
 
   def new
@@ -14,12 +15,21 @@ class Public::CartItemsController < ApplicationController
   end
 
   def update
+    @cart_item.update(params)
+    redirect_to public_cart_items_paht
+
   end
 
   def destroy
+    @cart_item.destroy
+    redirect_to public_cart_items_paht
   end
 
   def all_destroy
+    @cart_items = current_user.cart_items
+    @cart_items.destroy
+    redirect_to public_cart_items_paht
   end
 
+  end
 end
