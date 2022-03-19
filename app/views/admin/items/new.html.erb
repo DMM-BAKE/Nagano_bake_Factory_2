@@ -1,5 +1,4 @@
-<div class=></div>
-    <%= render 'layouts/errors', obj: @item %>
+ <%= render 'layouts/errors', obj: @item %>
   <h2>商品新規登録</h2>
   <%= form_with model: @item, url: admin_items_path, local:true do |f| %>
     <div class="form-group">
@@ -30,4 +29,3 @@
      <%= f.submit "新規登録" %>
     </div>
   <% end %>
-</div>
