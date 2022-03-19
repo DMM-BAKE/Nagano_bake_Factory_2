@@ -17,5 +17,11 @@ class Order < ApplicationRecord
     発送準備中: 3,
     発送済: 4,
   }
+  
+  enum address_option:{
+    ご自身の住所: 0,
+    登録住所から選択: 1,
+    新しいお届け先: 2,
+  }
 
 end
