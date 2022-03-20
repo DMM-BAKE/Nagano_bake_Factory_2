@@ -19,7 +19,7 @@
       </td>
 
       <td><%= cart_item.subtotal %></td>
-      <td><%= link_to '削除する', method: :delete %></td>
+      <td><%= link_to '削除する', "/public/cart_items/#{cart_item.id}",method: :delete %></td>
           <% @order_price += cart_item.subtotal %>
     </tr><% end %>
 
