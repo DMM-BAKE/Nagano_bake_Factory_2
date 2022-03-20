@@ -17,9 +17,7 @@ Rails.application.routes.draw do
 
    namespace :public do
    resources :genres, only: [:index]
-
-
-   resources :addresses, only: [:index, :create, :edit, :update]
+   resources :addresses, only: [:index, :create, :edit, :update, :destroy]
    resources :cart_items, only: [:index, :show, :destroy, :edit, :create, :update]
    resources :items, only: [:index, :show]
    resources :orders, only: [:index, :show, :new, :confirm, :create, :thanks]
