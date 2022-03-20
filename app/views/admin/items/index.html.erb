@@ -1,6 +1,6 @@
 <div class="container">
-  <div class=row>
-    <div class="col-xs-10 col-xs-offset-1">
+  <div class="row justify-content-center">
+    <div class="col-md-10 col-xs-offset-1">
       <h3>商品一覧</h3>
       <%= link_to new_admin_item_path, class: "btn pull-right new_product" do %>
        <i class="fa fa-plus-circle fa-3x"></i>
@@ -28,9 +28,9 @@
             <td><%= item.genre.name %></td>
             <td>
               <% if item.item_status == true %>
-                <strong><p class="text-success">販売中</p></strong>
+                <b><p class="text-success">販売中</p></b>
               <% else %>
-                <strong><p class="text-secondary">販売停止中</p></strong>
+                <b><p class="text-secondary">販売停止中</p></b>
               <% end %>
             </td>
           </tr>
