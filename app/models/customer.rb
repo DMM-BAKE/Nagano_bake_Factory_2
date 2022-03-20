@@ -13,6 +13,7 @@ class Customer < ApplicationRecord
   validates :address, length: { maximum: 100 }
   validates :phone_number, length: { maximum: 13 }
 
+
   # 別々で保存された名前をfull_nameで合わせて定義
   def full_name
     self.last_name + self.first_name
@@ -26,5 +27,4 @@ class Customer < ApplicationRecord
   def active_for_authentication?
     super && (is_deleted == false)
   end
-
 end
