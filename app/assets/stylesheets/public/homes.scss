@@ -1,3 +1,55 @@
 // Place all the styles related to the public/homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// .img-wrap {
+//   overflow: hidden;
+//   position: relative;
+// }
+
+// .img-wrap:before {
+//   animation: img-wrap 2s cubic-bezier(.4, 0, .2, 1) forwards;
+//   background: #fff;
+//   bottom: 0;
+//   content: '';
+//   left: 0;
+//   pointer-events: none;
+//   position: absolute;
+//   right: 0;
+//   top: 0;
+//   z-index: 1;
+// }
+
+// @keyframes img-wrap {
+//   100% {
+//     transform: translateX(100%);
+//   }
+
+// .img-wrap p {
+//   position: absolute;/*絶対配置*/
+//   color: white;/*文字は白に*/
+//   top: 0;
+//   left: 0;
+//   }
+
+// }
+
+.img-wrap {
+  position: relative;
+  }
+
+.img-wrap p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  /*文字の装飾は省略*/
+  }
+
+.img-wrap img {
+  width: 100%;
+  }
