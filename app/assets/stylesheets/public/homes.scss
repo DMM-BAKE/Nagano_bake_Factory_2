@@ -2,40 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-// .img-wrap {
-//   overflow: hidden;
-//   position: relative;
-// }
-
-// .img-wrap:before {
-//   animation: img-wrap 2s cubic-bezier(.4, 0, .2, 1) forwards;
-//   background: #fff;
-//   bottom: 0;
-//   content: '';
-//   left: 0;
-//   pointer-events: none;
-//   position: absolute;
-//   right: 0;
-//   top: 0;
-//   z-index: 1;
-// }
-
-// @keyframes img-wrap {
-//   100% {
-//     transform: translateX(100%);
-//   }
-
-// .img-wrap p {
-//   position: absolute;/*絶対配置*/
-//   color: white;/*文字は白に*/
-//   top: 0;
-//   left: 0;
-//   }
-
-// }
-
 .img-wrap {
   position: relative;
+  overflow: hidden;
   }
 
 .img-wrap p {
@@ -47,9 +16,46 @@
   transform: translate(-50%,-50%);
   margin:0;
   padding:0;
-  /*文字の装飾は省略*/
+  color: white;
+  font-size: 90px;
   }
 
 .img-wrap img {
   width: 100%;
   }
+
+.img-wrap:before {
+  animation: img-wrap 2s cubic-bezier(.4, 0, .2, 1) forwards;
+  background: #fff;
+  bottom: 0;
+  content: '';
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+@keyframes img-wrap {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+#top-title {
+  position: relative;
+  padding: 0.5em;
+  background: #a6d3c8;
+  color: white;
+}
+
+#top-title::before {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 0;
+  border: none;
+  border-bottom: solid 15px transparent;
+  border-right: solid 20px rgb(149, 158, 155);
+}
