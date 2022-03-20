@@ -19,9 +19,9 @@ class Order < ApplicationRecord
   }
 
   enum address_option:{
-    ご自身の住所: 0,
-    登録住所から選択: 1,
-    新しいお届け先: 2,
+    customer_address: 0,
+    registration_address: 1,
+    new_address: 2,
   }
 
 end

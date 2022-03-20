@@ -21,6 +21,7 @@ Rails.application.routes.draw do
    resources :cart_items, only: [:index, :show, :destroy, :edit, :create, :update]
    resources :items, only: [:index, :show]
    resources :orders, only: [:index, :show, :new, :confirm, :create, :thanks]
+   post '/orders/confirm' => 'orders#confirm'
   resource :customers, only: [:show, :quit, :out, :edit, :update]
    get '/quit' => 'customers#quit', as: 'quit'
    patch '/withdrawal' => 'customers#withdrawal', as: 'withdrawal'
