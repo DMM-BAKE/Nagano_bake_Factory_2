@@ -6,8 +6,8 @@ class Order < ApplicationRecord
   validates :address, length: { maximum: 60 }
 
   enum payment_method: {
-    クレジットカード: 0,
-    銀行振り込み: 1,
+    credit_card: 0,
+    transfer: 1,
   }
 
   enum order_status: {
@@ -17,7 +17,7 @@ class Order < ApplicationRecord
     発送準備中: 3,
     発送済: 4,
   }
-  
+
   enum address_option:{
     ご自身の住所: 0,
     登録住所から選択: 1,

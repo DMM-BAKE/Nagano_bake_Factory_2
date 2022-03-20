@@ -1,11 +1,14 @@
 <h2>注文情報入力</h2>
 <%= form_with model: @order, url: public_orders_path, local:true do |f| %>
 <p>支払い方法</p>
-  <%= f.radio_button :payment_method, :クレジットカード, checked: "checked" %>
-  <%= f.label :クレジットカード, class: "payment_method_label" %>
-  <%= f.radio_button :payment_method, :銀行振り込み, checked: "checked" %>
-  <%= f.label :銀行振り込み, class: "payment_method_label" %>
+  <%= f.radio_button :payment_method, Order.payment_methods.key(0) %>
+  <%= f.label :payment_method, Order.payment_methods_i18n[:credit_card] %>
+
+  <%= f.radio_button :payment_method, Order.payment_methods.key(1) %>
+  <%= f.label :payment_method, Order.payment_methods_i18n[:transfer]%>
+
 <p>お届け先</p>
+  <%= f.select :address_id, options_from_collection_for_select(Address.all, :id, :name) %>
 
   <%= f.radio_button :address_option, :"#{current_customer.address}", checked: "checked" %>
   <%= f.label :"ご自身の住所　〒#{current_customer.postal_code} #{current_customer.address}", class: "payment_method_label" %>
