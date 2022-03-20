@@ -1,46 +1,38 @@
-<div class="container my-5">
-  <div class="row">
-    <div class="col">
 
-      <h3>会員情報編集</h3>
-
+    <edit-form>
+       <h3>会員情報編集</h3>
+      
       <%= form_with model: @customer, url:public_customers_path, method: :PATCH do |f| %>
-      <div class="my-2">
-        <%= f.label :"名前" %>
-        <%= f.text_field :last_name, autofocus: true %>
-        <%= f.text_field :first_name, autofocus: true %>
-      </div>
+      <dl>
+        <dt><%= f.label :"名前" %></dt>
+        <dd>
+          <%= f.text_field :last_name, autofocus: true %>
+          <%= f.text_field :first_name, autofocus: true %>
+        </dd>
 
-      <div class="mb-2">
-        <%= f.label :"フリガナ" %>
-        <%= f.text_field :last_name_kana, autofocus: true %>
-        <%= f.text_field :first_name_kana, autofocus: true %>
-      </div>
-
-      <div class="my-2">
-        <%= f.label :"郵便番号" %>
-        <%= f.text_field :postal_code, autofocus: true %>
-      </div>
-
-      <div class="my-2">
-        <%= f.label :"住所" %>
-        <%= f.text_field :address, autofocus: true %>
-      </div>
-
-      <div class="my-2">
-        <%= f.label :"電話番号" %>
-        <%= f.text_field :phone_number, autofocus: true %>
-      </div>
-
-      <div class="my-2">
-        <%= f.label :"メールアドレス" %>
-        <%= f.email_field :email, autofocus: true %>
-      </div>
-
+        <dt><%= f.label :"フリガナ" %></dt>
+        <dd>
+          <%= f.text_field :last_name_kana, autofocus: true %>
+          <%= f.text_field :first_name_kana, autofocus: true %>
+        </dd>
+        
+        <dt><%= f.label :"郵便番号" %></dt>
+        <dd><%= f.text_field :postal_code, autofocus: true %></dd>
+         
+        <dt><%= f.label :"住所" %></dt>
+        <dd><%= f.text_field :address, autofocus: true %></dd>
+        
+        <dt><%= f.label :"電話番号" %></dt>
+        <dd><%= f.text_field :phone_number, autofocus: true %></dd>
+        
+        <dt><%= f.label :"メールアドレス" %></dt>
+        <dd><%= f.email_field :email, autofocus: true %></dd>
+  
       <%= f.submit "編集内容を保存", class: "btn btn-success" %>
       <%= link_to "退会する", public_quit_path, class: "btn btn-danger" %>
       <% end %>
+      </dl>
+      
+    </edit-form>
+     
 
-    </div>
-  </div>
-</div>
