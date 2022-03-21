@@ -1,0 +1,23 @@
+<p>ご注文ありがとうございました！</p>
+
+<% @orders.each do |order| %>
+<div>
+【注文内容】
+注文id<%= order.id %>
+カスタマーid<%= order.customer_id %>
+注文住所<%= order.address %><%= order.name %><%= order.shipping_cost %>
+支払い方法<%= order.payment_method %>
+合計金額<%= order.total_payment %>円
+</div>
+<% order.order_details.each do |order_detail| %>
+<div>
+【注文詳細内容】
+注文id<%= order_detail.order_id %>
+商品id<%= order_detail.item_id %>
+個数<%= order_detail.order_count %>
+購入時価格<%= order_detail.order_price %>円</div>
+<% end %>
+
+<% end %>
+
+

@@ -1,19 +1,48 @@
 <h2>注文情報入力</h2>
-<%= form_with model: @order, url: public_orders_path, local:true do |f| %>
+<%= form_with model: @order, url: public_orders_confirm_path, local:true do |f| %>
+
 <p>支払い方法</p>
-  <%= f.radio_button :payment_method, :クレジットカード, checked: "checked" %>
-  <%= f.label :クレジットカード, class: "payment_method_label" %>
-  <%= f.radio_button :payment_method, :銀行振り込み, checked: "checked" %>
-  <%= f.label :銀行振り込み, class: "payment_method_label" %>
+  <di>
+    <%= f.radio_button :payment_method, Order.payment_methods.key(0), checked: "checked" %>
+    <%= f.label :payment_method, Order.payment_methods_i18n[:credit_card] %>
+  </di>
+  <div>
+    <%= f.radio_button :payment_method, Order.payment_methods.key(1) %>
+    <%= f.label :payment_method, Order.payment_methods_i18n[:transfer]%>
+  </div>
 <p>お届け先</p>
+  <div>
+    <%= f.radio_button :select_address, 0, checked: "checked" %>
+    <%= f.label :"ご自身の住所　〒#{current_customer.postal_code} #{current_customer.address}", class: "payment_method_label" %>
+  </div>
+  <div>
+    <%= f.radio_button :select_address, 1 %>
+    <%= f.label :"登録住所から選択" %>
+    <%= f.select :address_id, options_from_collection_for_select(Address.all, :id, :address_display) %>
+  </div>
+  <div>
+  <%= f.radio_button :select_address, 2 %>
+  <%= f.label :"新規お届け先入力" %>
+  </div>
+  <div>
+    <%= f.label :"郵便番号(ハイフンなし)" %>
+    <%= f.text_field :postal_code %>
+  </div>
 
-  <%= f.radio_button :address_option, :"#{current_customer.address}", checked: "checked" %>
-  <%= f.label :"ご自身の住所　〒#{current_customer.postal_code} #{current_customer.address}", class: "payment_method_label" %>
-  <%= f.radio_button :address, :"#{current_customer.address}", checked: "checked" %>
-  <%= f.label :"登録住所から選択〒#{current_customer.postal_code} #{current_customer.address}", class: "payment_method_label" %>
+  <div>
+    <%= f.label :"住所" %>
+    <%= f.text_field :address %>
+  </div>
 
+  <div>
+    <%= f.label :"宛名" %>
+    <%= f.text_field :name %>
 
-
-	<%= f.submit "確認画面へ進む" , class:"btn btn-primary" %>
-
+  </div>
+    <%= f.submit "確認画面へ進む" , class:"btn btn-primary" %>
   <% end %>
+
+
+
+
+
