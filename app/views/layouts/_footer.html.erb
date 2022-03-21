@@ -1,0 +1,23 @@
+<footer>
+  <nav  class="navbar navbar-expand-lg ">
+    <div class="container">
+  	<p class="navbar-brand text-light mt-2">©NAGANO CAKE</p>
+  	<ul class="navbar-nav ml-auto">
+      <% if customer_signed_in? %>
+           <ul><%= link_to'購入履歴一覧', public_orders_path, class: 'nav-link text-light' %></ul>
+           <ul><%= link_to'登録情報変更',edit_public_customers_path(current_customer), class: 'nav-link text-light' %></ul>
+           <ul><%= link_to'商品一覧', public_items_path, class: 'nav-link text-light' %></ul>
+           <ul><%= link_to'トップページ', root_path, class: 'nav-link text-light' %></ul>
+      <% elsif admin_signed_in? %>     
+           <ul><%= link_to'商品一覧', admin_items_path, class: 'nav-link text-light' %></ul>
+           <ul><%= link_to'トップページ', root_path, class: 'nav-link text-light'  %></ul>
+      <% else %>     
+           <ul><%= link_to'商品一覧', public_items_path, class: 'nav-link text-light' %></ul>
+           <ul><%= link_to'トップページ', root_path, class: 'nav-link text-light'  %></ul>
+      <% end %>
+      </ul>
+  </div>
+  </nav>
+</footer>
+  
+  

@@ -1,16 +1,42 @@
-<div class="container"><img class="d-block mx-auto" src="assets/cake7.jpg" style="width:100%;"></div>
+<div class="container">
   <div class="row">
-    <h4 style="font-family: HiraMinPro-W6">ようこそ、NaganoCakeへ！<br>
-      このサイトは、ケーキ販売のECサイトになります。<br>
-      会員でない方も商品の閲覧はできますが、<br>
-      購入には会員登録が必要になります。<br>
-    </h4>
-
-     <h3>オススメ商品</h3>
-     <!--ここにおすすめ商品が載る-->
-
+    <div class="col-12">
+      <div class="img-wrap">
+        <img class="img" src="assets/パンケーキ.jpg">
+        <p>NAGANO CAKE</p>
+      </div>
+        <div class="row">
+          <div class="col-md-10 mt-5">
+            <h4 class="main-message">
+              ようこそ、<span id="top-title">NaganoCakeへ！</span><br>
+            </h4>
+              <h4 class="sub-message" style="font-family: HiraMinPro-W6">
+                このサイトは、ケーキ販売のECサイトになります。<br>
+                会員でない方も商品の閲覧はできますが、購入には会員登録が必要になります。
+                会員登録は<%= link_to"こちら", new_customer_registration_path %>
+              </h4>
+          </div>
+          <div class="col-md-2">
+            <%= render 'public/items/genre', genres: @genres %>
+          </div>
+        </div>  
+        <div class="row">
+          <h3 class="col-12 text-center mt-5">新着商品</h3>
+          <div class="col" id="top-items">
+          <% @items.last(4).each do |item| %>
+          <div class="col">
+            <%= link_to public_item_path(item.id) ,style: "color: black; text-decoration: none;", data: {"turbolinks" => false} do %>
+            <%= image_tag item.get_image(250, 600) %><br>
+            <%= item.name %><br>
+            ¥<%= item.add_tax_price.to_s(:delimited, delimiter: ',') %>
+            <% end %>
+          </div>
+          <% end %>
+          </div>
+          <h4 class="mt-3">
+          <%= link_to "もっと見る>", public_items_path, style: "font-family:HiraMinPro-W6; text-decoration:none; color:black;" %>
+          </h4>
+          </div>
     </div>
-      <h4 class="mt-3 text-black">
-        <%= link_to "もっと見る>", public_items_path, class: "pull-right", style: "font-family: HiraMinPro-W6; text-decoration: none;" %>
-      </h4>
+   </div>
 </div>
