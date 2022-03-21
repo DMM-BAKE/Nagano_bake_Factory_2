@@ -46,25 +46,17 @@ class Public::OrdersController < ApplicationController
   end
     current_customer.cart_items.destroy_all
     redirect_to public_thanks_path
-
-
-
-    # @order = Order.new(order_params)
-    # @order.save
-    # redirect_to public_order_details_path
   end
 
   def thanks
-
+    @orders = current_customer.orders
   end
   def show
-    @orders = current_customer.orders
-
+  @order = Order.find(params[:id])
   end
-    # ためし
-
 
   def index
+    @orders = current_customer.orders
   end
 
 

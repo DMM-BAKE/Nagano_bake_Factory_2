@@ -5,4 +5,10 @@
           credit_card: "クレジットカード"
           transfer: "銀行振込"
 
-        
+        order_status:
+          waiting: "入金待ち"
+          paid_up: "入金確認"
+          under_production: "製作中"
+          preparing: "発送準備中"
+          shipped: "発送済"
+
