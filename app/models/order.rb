@@ -16,7 +16,5 @@ class Order < ApplicationRecord
     preparing: 3,
     shipped: 4,
   }
-  
-
 
 end

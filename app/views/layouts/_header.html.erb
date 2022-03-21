@@ -17,21 +17,21 @@
             <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'nav-link text-light' %>
           </ul>
         <% elsif admin_signed_in? %>
-          <ul>
+          <li>
             <%= link_to "商品一覧", admin_items_path, class: 'nav-link text-light' %>
-          </ul>
-          <ul>
+          </li>
+          <li>
             <%= link_to "会員一覧", admin_customers_path, class: 'nav-link text-light' %>
-          </ul>
+          </li>
           <li>
             <%= link_to "注文履歴一覧", admin_orders_path, class: 'nav-link text-light' %>
-          </ul>
-          <ul>
+          </li>
+          <li>
             <%= link_to "ジャンル一覧", admin_genres_path, class: 'nav-link text-light' %>
-          </ul>
-          <ul>
+          </li>
+          <li>
             <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'nav-link text-light' %>
-          </ul>
+          </l>
         <% else %>
          <ul>
             <%= link_to "About", about_path, class: 'nav-link text-light'%>
