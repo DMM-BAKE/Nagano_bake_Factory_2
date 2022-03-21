@@ -20,7 +20,7 @@ class Customer < ApplicationRecord
   end
 
   def full_name_kana
-    self.last_name_kana + self.first_name_kana
+    self.first_name_kana + self.last_name_kana
   end
 
   # is_deletedがfalseならturuを返す設定
