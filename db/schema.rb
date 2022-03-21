@@ -123,7 +123,7 @@ ActiveRecord::Schema.define(version: 2022_03_16_080322) do
     t.string "name"
     t.string "postal_code"
     t.string "address"
-    t.integer "order_status"
+    t.integer "order_status", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
