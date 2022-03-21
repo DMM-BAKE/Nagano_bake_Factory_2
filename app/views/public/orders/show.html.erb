@@ -1,0 +1,12 @@
+<p>ご注文ありがとうございました！</p>
+
+<% @orders.each do |order| %>
+注文id<%= order.id %>
+カスタマーid<%= order.customer_id %>
+注文住所<%= order.address %>
+支払い方法<%= order.payment_method %>
+合計金額<%= order.total_payment %>円
+
+<% end %>
+
+

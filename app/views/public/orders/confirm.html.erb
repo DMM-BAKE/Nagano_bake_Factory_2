@@ -7,27 +7,27 @@
     <th>数量</th>
     <th>小計</th>
   </tr>
-  <%= form_with model:@order_details, local: true do |f| %>
+
   <% @cart_items.each do |cart_item| %>
   <tr>
     <td><%= cart_item.item.name %></td>
-    <%= f.hidden_field :item_id, :value => cart_item.item.id %>
+
     <td><%= cart_item.item.add_tax_price %></td>
-    <%= f.hidden_field :order_price, :value => cart_item.item.add_tax_price %>
+
     <td><%= cart_item.item_count %></td>
-    <%= f.hidden_field :order_count, :value => cart_item.item_count %>
+
     <td><%= cart_item.subtotal %></td>
     <td><%= @order_price += cart_item.subtotal %></td>
   </tr>
   <% end %>
-    <%= f.hidden_field :order_id, :value => @order.id%>
-    <%= f.hidden_field :customer_id, :value => current_customer.id %>
+
+
   </table>
   <table>
     <tr>
       <th>送料</th>
       <td><%= shipping_cost = 800 %></td>
-      <%= f.hidden_field :shipping_cost, :value => shipping_cost %>
+
     </tr>
     <tr>
       <th>合計金額</th>
@@ -37,18 +37,21 @@
     <tr>
       <th>請求額</th>
       <td><%= @order_price += shipping_cost %></td>
-      <%= f.hidden_field :total_payment, :value => @order_price += shipping_cost %>
+
     </tr>
   </table>
 
   </div>
-  <%= fields_for :order ,(@order), url: public_orders_path, local: true do |f| %>
-
+  <%= form_with model:@order, url: public_orders_path(@order), method: :post, local: true do |f| %>
+    <%= f.hidden_field :customer_id, :value => current_customer.id %>
+    <%= f.hidden_field :total_payment, :value => @order_price += shipping_cost %>
+    <%= f.hidden_field :shipping_cost, :value => shipping_cost %>
   <div>
     <span>支払い方法</span>
 
     <%= @order.payment_method_i18n %>
     <%= f.hidden_field :payment_method, :value => @order.payment_method %>
+
   </div>
   <div>
     <span>お届け先</span>
@@ -62,7 +65,7 @@
   </div>
 
 <%= f.submit '注文を確定する'%>
-<% end %><% end %>
+<% end %>
 
 
 

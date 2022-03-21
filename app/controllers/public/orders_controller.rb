@@ -32,17 +32,37 @@ class Public::OrdersController < ApplicationController
   end
 
   def create
+    @order = Order.new(order_params)
+    @order.save
+    @cart_items = current_customer.cart_items.all
+    @cart_items.each do |cart_item|
+        @order_detail = OrderDetail.new
+        @order_detail.order_id = @order.id
+        @order_detail.item_id = cart_item.item.id
+        @order_detail.order_count = cart_item.item_count
+        @order_detail.order_price = cart_item.item.add_tax_price
+        @order_detail.save
 
-    if @order.save(order_params)
-      redirect_to public_cart_items_all_destroy_path
-    else
-      render 'confirm'
-    end
+  end
+    current_customer.cart_items.destroy_all
+    redirect_to public_orders_thanks_path
+
+
+
+    # @order = Order.new(order_params)
+    # @order.save
+    # redirect_to public_order_details_path
   end
 
   def thanks
 
   end
+  def show
+    @orders = current_customer.orders
+
+  end
+    # ためし
+
 
   def index
   end
