@@ -10,7 +10,7 @@
            <ul><%= link_to'トップページ', root_path, class: 'nav-link text-light' %></ul>
       <% elsif admin_signed_in? %>     
            <ul><%= link_to'商品一覧', admin_items_path, class: 'nav-link text-light' %></ul>
-           <ul><%= link_to'トップページ', admin_path, class: 'nav-link text-light'  %></ul>
+           <ul><%= link_to'トップページ', root_path, class: 'nav-link text-light'  %></ul>
       <% else %>     
            <ul><%= link_to'商品一覧', public_items_path, class: 'nav-link text-light' %></ul>
            <ul><%= link_to'トップページ', root_path, class: 'nav-link text-light'  %></ul>
