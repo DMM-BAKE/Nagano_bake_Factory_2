@@ -6,7 +6,7 @@
 			<% if item.item_status == true %>
 				<div style="padding-right: 0px; padding-left: 0px; margin: 10px 0;">
 					<%= link_to public_item_path(item.id) ,style: "color: black; text-decoration: none;", data: {"turbolinks" => false} do %>
-            <%= image_tag item.get_image(250, 600) %><br>
+            <%= image_tag item.get_image(, 600) %><br>
             <%= item.name %><br>
             ¥<%= item.add_tax_price.to_s(:delimited, delimiter: ',') %>
 					<% end %>
