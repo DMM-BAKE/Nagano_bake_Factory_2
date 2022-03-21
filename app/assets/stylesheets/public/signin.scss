@@ -4,29 +4,21 @@
   text-decoration: none;
 }
 
-// .box1 {
-//   width: 500px;
-//   height: 750px;
-//   margin: 48px auto 0;
-//   border-radius: 4px;
-// }
-
-// .box2 {
-//   width: 350px;
-//   height: 450px;
-//   margin: 60px auto 0;
-//   border-radius: 4px;
-// }
-
-// .box-inner {
-//   padding: 40px 26px;
-// }
-
 h2 {
   font-weight: 400;
   font-size: 28px;
   line-height: 1.2;
   margin-bottom: 10px;
+  padding-bottom: 4px;
+  color: #111111;
+}
+
+h6 {
+  font-weight: 400;
+  // font-size: 28px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  margin-top: 15px;
   padding-bottom: 4px;
   color: #111111;
 }
@@ -103,3 +95,32 @@ h2 {
   padding: 0 7px;
 }
 
+@media (max-width: 540px) and (min-width: 0px){
+
+.box-email input[type="email"],
+  .box-address input[type="text"],{
+    border-style: none;
+    box-sizing: border-box;
+    width: 70%;
+    height: 31px;
+    border: 1px solid #a6a6a6;
+    box-shadow: 0 1px 0 rgba(0,0,0,.07) inset;
+    border-radius: 5px;
+    padding: 0 7px;
+  }
+
+  .box-name input[type="text"],
+  .box-name-kana input[type="text"],
+  .box-postal_code input[type="text"],
+  .box-password input[type="password"],
+  .box-phone_number input[type="text"],{
+    border-style: none;
+    box-sizing: border-box;
+    width: 30%;
+    height: 30px;
+    border: 1px solid #a6a6a6;
+    box-shadow: 0 1px 0 rgba(0,0,0,.07) inset;
+    border-radius: 5px;
+    padding: 0 7px;
+  }
+}

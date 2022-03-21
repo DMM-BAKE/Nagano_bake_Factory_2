@@ -8,10 +8,7 @@
   <p>NAGANO CAKE</p>
 </div>
 <div class="row">
-  <div class="col-2">
-    <%= render 'public/items/genre', genres: @genres %>
-  </div>
-  <div class="col-10 mt-5">
+  <div class="col-md-10 mt-5">
     <h4 class="main-message">
       ようこそ、<span id="top-title">NaganoCakeへ！</span><br>
     </h4>
@@ -21,7 +18,10 @@
       会員登録は<%= link_to"こちら", new_customer_registration_path %>
     </h4>
     </div>
-</div>
+  <div class="col-md-2">
+    <%= render 'public/items/genre', genres: @genres %>
+  </div>
+</div>  
 <div class="row">
   <h3 class="col-12 text-center mt-5">新着商品</h3>
     <div class="col" id="top-items">

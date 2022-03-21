@@ -6,8 +6,8 @@
   position: relative;
   overflow: hidden;
   height: 500px;
-  }
-
+}
+ 
 .img-wrap p {
   position: absolute;
   top: 50%;
@@ -41,6 +41,42 @@
 @keyframes img-wrap {
   100% {
     transform: translateX(100%);
+  }
+}
+
+.about-img-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 650px;
+  // margin-top: 150px;
+  animation-name: blur;
+  animation-duration: 3s;
+  }
+
+.about-img-wrap p {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  color: white;
+  font-size: 20px;
+  }
+
+.about-img-wrap img {
+  width: 100%;
+  height: 100%;
+  }
+
+@keyframes blur {
+  0% {
+    filter: blur(5px);
+  }
+  100% {
+    filter: blur(0);
   }
 }
 
@@ -78,17 +114,33 @@
   margin-top: 30px;
 }
 
-.about-message {
-  display: flex;
-  justify-content: center;
-  height:60px;
-  line-height: 50px;
-  padding: 100px;
-  font-size: 20px;
+
+@media (max-width: 1080px) and (min-width: 0px){
+ .about-img-wrap p {
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  color: white;
+  font-size: 15px;
+  }
 }
 
-.about-img {
-  margin-top: 110px;
-  display: flex;
-  justify-content: center;
+@media (max-width: 780px) and (min-width: 0px){
+.about-img-wrap p {
+  position: absolute;
+  top: 20%;
+  left: 35%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  color: white;
+  font-size: 10px;
+  }
 }

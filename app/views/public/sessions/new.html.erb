@@ -1,12 +1,9 @@
-<div class="container">
+<div class="container my-5">
   <div class="row">
-    <div class="col">
-      
-    </div>
-  </div>
-  <div class="box1">
+    <div class="col-md-12">
+       <div class="box1">
   <div class="box-inner">
-    <h3>ログイン</h3>
+    <h2>ログイン</h2>
     <%= render "layouts/errors", obj: resource %>
     <h6 class="my-3">会員の方はこちらからログイン</h6>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -23,10 +20,13 @@
     </div>
     <% end %>
     <div>
-      <h6 class="mt-2">会員登録がお済みでない⽅</h6>
+      <h6>会員登録がお済みでない⽅</h6>
       <p><%= link_to "こちら", new_customer_registration_path %> から新規登録を行ってください。</p>
     </div>
   </div>
+    </div>
+  </div>
+ 
 </div>
 </div>
 
