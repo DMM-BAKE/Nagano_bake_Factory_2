@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   
   validates :name, length: { maximum: 40 }
 
+
   def get_image(width, height)
     unless image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpg')

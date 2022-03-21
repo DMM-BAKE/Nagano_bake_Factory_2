@@ -1,9 +1,1 @@
-<div class='container px-5 px-sm-0'>
-
-  <div class='row'>
-    <div class='col-md-8 offset-md-1'>
-      <h2>商品一覧</h2>(全×件)
-      <%= render 'index', items: @items %>
-    </div>
-  </div>
-</div>
+<h2>商品一覧</h2>(全<%= @items.count %>件) <%= render 'index', items: @items %>

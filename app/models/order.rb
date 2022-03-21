@@ -10,7 +10,4 @@ class Order < ApplicationRecord
     transfer: 1,
   }
   
-  
-
-
 end
