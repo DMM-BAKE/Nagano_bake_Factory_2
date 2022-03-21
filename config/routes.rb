@@ -24,7 +24,7 @@ Rails.application.routes.draw do
    resources :items, only: [:index, :show]
    resources :orders, only: [:index, :show, :new, :confirm, :create, :thanks]
    post '/orders/confirm' => 'orders#confirm'
-   get '/orders/thanks' => 'orders#thanks'
+   get '/thanks' => 'orders#thanks'
    resources :order_details, only: [:index, :show, :create]
   resource :customers, only: [:show, :quit, :out, :edit, :update]
    get '/quit' => 'customers#quit', as: 'quit'

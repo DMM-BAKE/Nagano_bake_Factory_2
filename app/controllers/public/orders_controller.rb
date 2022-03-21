@@ -45,7 +45,7 @@ class Public::OrdersController < ApplicationController
 
   end
     current_customer.cart_items.destroy_all
-    redirect_to public_orders_thanks_path
+    redirect_to public_thanks_path
 
 
 
