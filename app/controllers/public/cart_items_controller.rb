@@ -43,8 +43,11 @@ class Public::CartItemsController < ApplicationController
 
   def all_destroy
     @cart_items = current_customer.cart_items
-    @cart_items.destroy
-    redirect_to public_cart_items_path
+    if @cart_items.destroy
+    redirect_to public_orders_thanks_path
+    else
+    redirect_to public_orders_confirm_path
+    end
   end
 
 

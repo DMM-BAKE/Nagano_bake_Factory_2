@@ -5,7 +5,4 @@
           credit_card: "クレジットカード"
           transfer: "銀行振込"
 
-        address_option:
-          customer_address: "ご自身の住所"
-          registration_address: "登録済住所から選択"
-          new_address: "新しいお届け先"
+        

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
    devise_for :customers,skip: [:passwords], controllers: { registrations: "public/registrations", sessions: 'public/sessions' }
    devise_for :admin, skip: [:registrations, :passwords] ,controllers: { sessions: "admin/sessions" }
 
@@ -19,9 +20,12 @@ Rails.application.routes.draw do
    resources :genres, only: [:index]
    resources :addresses, only: [:index, :create, :edit, :update, :destroy]
    resources :cart_items, only: [:index, :show, :destroy, :edit, :create, :update]
+   delete '/cart_items/all_destroy' => 'cart_items#all_destroy'
    resources :items, only: [:index, :show]
    resources :orders, only: [:index, :show, :new, :confirm, :create, :thanks]
    post '/orders/confirm' => 'orders#confirm'
+   get '/orders/thanks' => 'orders#thanks'
+   resources :order_details, only: [:index, :show, :create]
   resource :customers, only: [:show, :quit, :out, :edit, :update]
    get '/quit' => 'customers#quit', as: 'quit'
    patch '/withdrawal' => 'customers#withdrawal', as: 'withdrawal'

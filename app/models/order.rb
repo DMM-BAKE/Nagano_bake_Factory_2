@@ -9,7 +9,9 @@ class Order < ApplicationRecord
     credit_card: 0,
     transfer: 1,
   }
-
+  def shipping_cost
+    shipping_cost = 800
+  end
   enum order_status: {
     入金待ち: 0,
     入金確認: 1,
@@ -18,10 +20,5 @@ class Order < ApplicationRecord
     発送済: 4,
   }
 
-  enum address_option:{
-    customer_address: 0,
-    registration_address: 1,
-    new_address: 2,
-  }
 
 end
