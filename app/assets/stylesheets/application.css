@@ -14,7 +14,16 @@
  *= require_self
  */
  @import "signin";
+ 
+* {
+    box-sizing: border-box;
+}
 
+*::before,
+*::after {
+    box-sizing: inherit; /* 継承 */
+}
+ 
 html {
   position: relative;
   min-height: 100%;
@@ -42,6 +51,19 @@ footer{
   position: absolute;
 }
 
+.field_with_errors {
+  display: contents
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+
 @media (max-width: 1080px) and (min-width: 0px){
 
  #top-items {
@@ -66,3 +88,4 @@ footer{
   font-size: 90px;
   }
 }
+
