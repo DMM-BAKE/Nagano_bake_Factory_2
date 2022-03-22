@@ -1,6 +1,7 @@
 class Public::ItemsController < ApplicationController
   def index
-    @items = Item.all
+    @items = Item.where(item_status: true)
+    @sale_item = Item.where(item_status: true)
   end
 
   def show
