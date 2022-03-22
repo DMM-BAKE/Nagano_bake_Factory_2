@@ -10,7 +10,7 @@ class Customer < ApplicationRecord
 
   validates :first_name, :last_name, presence: true, length: { maximum: 20 }
   validates :first_name_kana, :last_name_kana, presence: true, length: { maximum: 60 }
-  validates :postal_code, presence: true, length: {is: 7}
+  validates :postal_code, presence: true
   validates :address, presence: true, length: { maximum: 100 }
   validates :phone_number, presence: true, length: { maximum: 13 }
 

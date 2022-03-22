@@ -12,6 +12,13 @@
           preparing: "発送準備中"
           shipped: "発送済"
 
+      order_detail:
+        making_status:
+          not_started: "着手不可"
+          waiting_production: "製作待ち"
+          in_production: "製作中"
+          production_completed: "製作完了"
+    
     activerecord:
       models:
         customer: "会員"
@@ -23,5 +30,6 @@
           last_name: "苗字"
           first_name_kana: "名前(カナ)"
           last_name_kana: "苗字(カナ)"
+          postal_code: "郵便番号"
           address: "住所"
           phone_number: "電話番号"
