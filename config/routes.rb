@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
 
    namespace :public do
-   resources :genres, only: [:index]
+   resources :genres, only: [:show]
    resources :addresses, only: [:index, :create, :edit, :update, :destroy]
    resources :cart_items, only: [:index, :show, :destroy, :edit, :create, :update]
    delete '/cart_items/all_destroy' => 'cart_items#all_destroy'

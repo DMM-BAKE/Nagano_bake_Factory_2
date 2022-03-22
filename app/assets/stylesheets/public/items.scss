@@ -1,29 +1,26 @@
 // Place all the styles related to the public/items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+* {
+  margin: 0;
+}
+
 
 .items {
   display: flex;
-  flex-direction: wrap;
+  flex-wrap: wrap;
+  justify-content:center;
 }
 
-.item_count {
+.item-price {
   display: block;
 }
 
-.pagination {
-  text-align: center;
-  padding-top: 50px;
+item-name {
+  margin-bottom: 20px;
 }
 
-.pagination p {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  margin: 0 5px;
-  color: #fff;
-  background-color: #acabab;
-  border-radius: 3px;
-  line-height: 30px;
+img {
+    max-width: 100%;
+    height: auto;
 }
-

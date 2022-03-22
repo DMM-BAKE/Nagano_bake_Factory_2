@@ -16,7 +16,10 @@ class Order < ApplicationRecord
     preparing: 3,
     shipped: 4,
   }
-  
+
+  def address_display
+  '〒' + postal_code + ' ' + address + ' ' + name
+  end
 
 
 end

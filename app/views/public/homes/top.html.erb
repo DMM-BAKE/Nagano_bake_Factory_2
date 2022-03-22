@@ -19,11 +19,12 @@
           <div class="col-md-2">
             <%= render 'public/items/genre', genres: @genres %>
           </div>
-        </div>  
+        </div>
         <div class="row">
           <h3 class="col-12 text-center mt-5">新着商品</h3>
           <div class="col" id="top-items">
           <% @items.last(4).each do |item| %>
+          <% if item.item_status == true %>
           <div class="col">
             <%= link_to public_item_path(item.id) ,style: "color: black; text-decoration: none;", data: {"turbolinks" => false} do %>
             <%= image_tag item.get_image(250, 600) %><br>
@@ -31,6 +32,7 @@
             ¥<%= item.add_tax_price.to_s(:delimited, delimiter: ',') %>
             <% end %>
           </div>
+          <% end %>
           <% end %>
           </div>
           <h4 class="mt-3">
