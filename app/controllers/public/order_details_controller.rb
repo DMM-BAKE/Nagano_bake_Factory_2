@@ -1,6 +1,5 @@
 class OrderDetailsController < ApplicationController
   def create
-    
   end
 
   def index

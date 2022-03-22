@@ -12,3 +12,16 @@
           preparing: "発送準備中"
           shipped: "発送済"
 
+    activerecord:
+      models:
+        customer: "会員"
+      attributes:
+        customer:
+          email: "メールアドレス"
+          password: "パスワード"
+          first_name: "名前"
+          last_name: "苗字"
+          first_name_kana: "名前(カナ)"
+          last_name_kana: "苗字(カナ)"
+          address: "住所"
+          phone_number: "電話番号"

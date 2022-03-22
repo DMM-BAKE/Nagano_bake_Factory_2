@@ -2,8 +2,8 @@ class Order < ApplicationRecord
 
   belongs_to :customer
   has_many :order_details
-  validates :name, length: { maximum: 40 }
-  validates :address, length: { maximum: 60 }
+  validates :name, precence: true, length: { maximum: 40 }
+  validates :address, precence: true, length: { maximum: 60 }
 
   enum payment_method: {
     credit_card: 0,
