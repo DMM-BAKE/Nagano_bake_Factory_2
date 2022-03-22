@@ -7,9 +7,7 @@
       <div class="col">
         <dl class="row">
           <dt class="col-sm-4">購入者</dt>
-          <dd class="col-sm-8">
-            <%= link_to @order.customer.full_name, admin_customer_path(@customer) %>
-          </dd>
+          <dd class="col-sm-8"><%= @order.customer.full_name %></dd>
           <dt class="col-sm-4">注文日</dt>
           <dd class="col-sm-8"><%= @order.created_at.strftime('%Y/%m/%d') %></dd>
           <dt class="col-sm-4">配送先</dt>
@@ -19,7 +17,7 @@
           <%= form_with model: @order, url: admin_order_path, method: :patch do |f| %>
           <dt class="col-sm-4">注文ステータス</dt>
           <dd class="col-sm-8">
-            <%= f.select :order_status, Order.order_statuses_i18n.invert %>
+            <%= f.select(:order_status, Order.order_statuses_i18n.invert, {selected: @order.order_status}) %>
             <%= f.submit '更新' ,class: "btn btn-primary" %>
           </dd>
           <% end %>
@@ -48,7 +46,7 @@
                   <td><% subtotal = order_detail.order_count * order_detail.item.add_tax_price %><%= subtotal %></td>
                   <%= form_with model: order_detail, url: admin_order_detail_path(order_detail), method: :patch do |f| %>
                   <td>
-                    <%= f.select :making_status, OrderDetail.making_statuses_i18n.invert %>
+                    <%= f.select(:making_status, OrderDetail.making_statuses_i18n.invert, {selected: order_detail.making_status}) %>
                   </td>
                   <td><%= f.submit '更新' ,class: "btn btn-primary" %></td>
                   <% end %>
