@@ -10,7 +10,7 @@ class Public::CartItemsController < ApplicationController
   end
 
   def create
-
+  if customer_signed_in?
     if CartItem.find_by(item_id: cart_item_params[:item_id])
       @cart_item = CartItem.find_by(item_id: cart_item_params[:item_id])
       @cart_item.item_count += (cart_item_params[:item_count]).to_i
@@ -18,12 +18,16 @@ class Public::CartItemsController < ApplicationController
       @cart_item = CartItem.new(cart_item_params)
       @cart_item.customer_id = current_customer.id
     end
-     if @cart_item.save
+    if @cart_item.save
      redirect_to public_cart_items_path
     else
      redirect_to public_items_path
     end
+  else
+    redirect_to new_customer_session_path
   end
+  end
+
 
   def edit
   end
