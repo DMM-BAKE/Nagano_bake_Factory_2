@@ -12,8 +12,6 @@ class Public::AddressesController < ApplicationController
       flash[:notice] = "新規配送先を登録しました"
       redirect_to public_addresses_path
     else
-      @addresses = Address.all
-      @address = Address.new
       render 'index'
     end
   end
@@ -28,7 +26,6 @@ class Public::AddressesController < ApplicationController
       flash[:notice] = "配送先を変更しました"
       redirect_to public_addresses_path
     else
-      @address = Address.find(params[:id])
       render "edit"
     end
   end
