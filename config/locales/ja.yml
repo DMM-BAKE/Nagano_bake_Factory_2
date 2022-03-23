@@ -1,5 +1,4 @@
- ja:
-
+ja:
     enums:
       order:
         payment_method:
@@ -34,11 +33,18 @@
           phone_number: "電話番号"
 
         item:
-          genre: "ジャンル"
           name: "商品名"
           description: "商品説明"
-          price: "価格"
+          price: "値段"
+          genre: "ジャンル"
 
+        genre:
+          name: "ジャンル名"
+
+        address:
+          postal_code: "郵便番号"
+          address: "住所"
+          name: "宛名"
 
 
 

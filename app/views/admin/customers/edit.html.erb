@@ -1,10 +1,11 @@
-<div class="text-danger">
-  <%= render 'layouts/errors', obj: @customer %>
-</div>
+
 
 <div class="container">
   <div class="row justify-content-center customer-edit-row">
     <div class="col-lg-11">
+      <div class="text-danger">
+        <%= render 'layouts/errors', obj: @customer %>
+      </div>
       <span class="p-2 bg-light h4"><%= @customer.full_name %>さんの会員情報編集</span>
       <br>
       <br>

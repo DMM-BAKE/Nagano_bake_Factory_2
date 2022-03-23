@@ -66,8 +66,5 @@ def order_params
 
 end
 
-
-
-
 end
 

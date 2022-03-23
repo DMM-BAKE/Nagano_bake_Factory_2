@@ -65,3 +65,4 @@ ja:
       invalid: "は有効でありません。"
       confirmation: "が内容とあっていません。"
       required: "が入力されてません"
+      wrong_length: "を７文字にしてください"
