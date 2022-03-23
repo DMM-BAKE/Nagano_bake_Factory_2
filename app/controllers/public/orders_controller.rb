@@ -1,7 +1,7 @@
 class Public::OrdersController < ApplicationController
   def new
     @order = Order.new
-
+    @addresses = Address.where(customer_id: current_customer.id)
   end
 
   def confirm
@@ -20,9 +20,13 @@ class Public::OrdersController < ApplicationController
       @order.address = @address.address
       @order.name = @address.name
     else
+      if params[:order][:postal_code] == "" || params[:order][:address] == "" || params[:order][:name] == ""
+        redirect_to new_public_order_path, notice: "配送先情報を入力して下さい"
+      else
       @order.postal_code = params[:order][:postal_code]
       @order.address = params[:order][:address]
       @order.name = params[:order][:name]
+      end
     end
   end
 
@@ -31,12 +35,12 @@ class Public::OrdersController < ApplicationController
     @order.save
     @cart_items = current_customer.cart_items.all
     @cart_items.each do |cart_item|
-        @order_detail = OrderDetail.new
-        @order_detail.order_id = @order.id
-        @order_detail.item_id = cart_item.item.id
-        @order_detail.order_count = cart_item.item_count
-        @order_detail.order_price = cart_item.item.add_tax_price
-        @order_detail.save
+      @order_detail = OrderDetail.new
+      @order_detail.order_id = @order.id
+      @order_detail.item_id = cart_item.item.id
+      @order_detail.order_count = cart_item.item_count
+      @order_detail.order_price = cart_item.item.add_tax_price
+      @order_detail.save
 
   end
     current_customer.cart_items.destroy_all
@@ -46,21 +50,20 @@ class Public::OrdersController < ApplicationController
   def thanks
     @orders = current_customer.orders
   end
+
   def show
-  @order = Order.find(params[:id])
+    @order = Order.find(params[:id])
   end
 
   def index
     @orders = current_customer.orders.page(params[:page]).per(5)
   end
 
-
   private
 
-  private
 def order_params
   params.require(:order).permit(:postal_code, :address, :name, :shipping_cost, :payment_method, :total_payment, :customer_id)
-  # params.require(:order).permit(:payment_method, :select_address, :postal_code, :address, :name)
+
 end
 
 
