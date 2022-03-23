@@ -1,11 +1,24 @@
-<div class='container px-5 px-sm-0'>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <h2 class="text-center mb-5 mt-2">商品一覧(全<%= @items.count %>件)</h2>
+      <div class="row">
+        <div class="col-md-3">
+          <%= render 'public/items/genre', genres: @genres %>
+        </div>
+        <div class="col-md-9">
+          <div class="items">
+            <% @items.each do |item| %>
+            <div class="item-content">
+              <%= image_tag item.get_image(400, 400) %><br>
+              <%= link_to item.name, public_item_path(item.id) %><br>
+              ¥<%= item.price.to_s(:delimited, delimiter: ',') %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
 
-  <div class='row'>
-    <div class='col-md-8 offset-md-1 item_index'>
-      <h2>商品一覧</h2>(全<%= @items.count %>件)
-      <%= render 'index', items: @items %>
-
-      <%= paginate @items %>
     </div>
   </div>
 </div>

@@ -8,11 +8,11 @@ Rails.application.routes.draw do
    get '/about' => 'public/homes#about'
 
    namespace :admin do
-   resources :genres, only: [:index, :edit, :create, :update]
-   resources :order_details, only: [:update]
-   resources :items, only: [:new, :index, :show, :create, :edit, :update, :destroy]
-   resources :orders, only: [:index, :show, :update]
-   resources :customers, only: [:index, :show, :edit, :update]
+     resources :genres, only: [:index, :edit, :create, :update]
+     resources :order_details, only: [:update]
+     resources :items, only: [:new, :index, :show, :create, :edit, :update, :destroy]
+     resources :orders, only: [:index, :show, :update]
+     resources :customers, only: [:index, :show, :edit, :update]
    end
 
 
@@ -32,6 +32,5 @@ Rails.application.routes.draw do
    get '/quit' => 'customers#quit', as: 'quit'
    patch '/withdrawal' => 'customers#withdrawal', as: 'withdrawal'
    end
-
 
 end
