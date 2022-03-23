@@ -5,7 +5,10 @@ class Item < ApplicationRecord
   belongs_to :genre
   has_one_attached :image
 
-  validates :name, length: { maximum: 40 }
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :price, presence: true
+
 
 
   def get_image(width, height)

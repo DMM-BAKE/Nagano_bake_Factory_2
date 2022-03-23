@@ -12,15 +12,15 @@ class Public::CustomersController < ApplicationController
   def update
     @customer = current_customer
     if @customer.update(customer_params)
-      redirect_to public_customer_path(@customer.id), notice: "会員の情報が更新されました"
+      redirect_to public_customers_path(current_customer), notice: "会員の情報が更新されました"
     else
-      render edit_public_customer_path
+      render edit_public_customers_path
     end
   end
-  
+
   def quit
   end
-  
+
   def withdrawal
   # @customer = Customer.find(params[:id])
   @customer = current_customer

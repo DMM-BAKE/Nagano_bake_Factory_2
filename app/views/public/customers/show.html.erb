@@ -1,12 +1,14 @@
-<div class="container my-5">
-  <div class="row">
-		<div class="col-6">
-		  <h2>マイページ</h2>
+<div class="container">
+  <div class="row justify-content-center">
+		<div class="col-md-6">
+		  <h2 class="text-center mt-2" style="font-family: HiraMinPro-W6;">マイページ</h2>
 		  <div>
-		    <strong class="font-weight-bold">登録情報</strong>
+		    <strong style="font-family: HiraMinPro-W6;">登録情報</strong>
+		  <div>
 		    <%= link_to " 編集する", edit_public_customers_path, class: "btn btn-sm btn-success" %>
 		  </div>
-		  <table class="table table-bordered table-hover">
+		  </div>
+		  <table class="company">
 		  	<tbody>
 		  	　<tr>
 		  		  <td class="info">氏名</td>
@@ -34,11 +36,15 @@
 		  	  </tr>
 		  	</tbody>
 		  </table>
-		  <div>
-		  	<strong>配送先</strong>
-		  	  <%= link_to " 一覧を見る", public_addresses_path, class: "btn btn-sm btn-info mb-3" %><br>
-		  	<strong>注文履歴</strong>
-		  	  <%= link_to " 一覧を見る", public_orders_path, class: "btn btn-sm btn-info" %>
+		  <div class="mt-2">
+		  	<strong style="font-family: HiraMinPro-W6;">配送先</strong>
+		  	<div class="ml-3">
+		  		<%= link_to " 一覧を見る", public_addresses_path, class: "btn btn-sm btn-primary mb-3 text-light" %><br>
+		  	</div>
+		  	<strong style="font-family: HiraMinPro-W6;">注文履歴</strong>
+		  	<div>
+		  		<%= link_to " 一覧を見る", public_orders_path, class: "btn btn-sm btn-primary text-light" %>
+		    </div>
 		  </div>
 		</div>
   </div>
