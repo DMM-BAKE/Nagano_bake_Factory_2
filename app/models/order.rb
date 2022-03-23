@@ -7,7 +7,6 @@ class Order < ApplicationRecord
   validates :address, presence: true, length: { maximum: 60 }
   validates :name, presence: true, length: { maximum: 20 }
   
-
   enum payment_method: {
     credit_card: 0,
     transfer: 1,
@@ -21,7 +20,7 @@ class Order < ApplicationRecord
   }
 
   def address_display
-  '〒' + postal_code + ' ' + address + ' ' + name
+    '〒' + postal_code + ' ' + address + ' ' + name
   end
 
 
