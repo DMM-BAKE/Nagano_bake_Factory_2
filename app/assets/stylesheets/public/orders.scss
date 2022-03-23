@@ -1,3 +1,72 @@
 // Place all the styles related to the public/orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.text_field {
+  margin: 10px 0px 0px 132px;
+
+}
+
+.text_field_first {
+  margin: 10px 0px 0px 20px;
+}
+
+.text_field_address {
+  width: 400px;
+  margin: 10px 0px 0px 132px;
+}
+
+.btn-down {
+  margin-top: 40px;
+}
+
+.select_address,
+.select_payment_method{
+  margin-top: 20px;
+}
+
+@media screen and (max-width:768px) {
+  .text_field {
+  margin: 0px;
+
+}
+}
+@media screen and (max-width:768px) {
+  .text_field_address {
+  width: 250px;
+  margin-left: 30px;
+}
+}
+
+
+span {
+  font-weight: bold;
+}
+
+.label {
+  margin-left: 20px;
+
+}
+.table-bordered {
+  margin-top: 10px;
+}
+
+.thanks {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.thanks p {
+  position: absolute;
+  top: 45%;
+  font-weight: bold;
+}
+
+// .order_index {
+//   position:  relative;
+// }
+// .page {
+//   position: absolute;
+//   bottom: 20%;
+//   left: 40%;
+// }

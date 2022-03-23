@@ -1,2 +1,11 @@
-<h2 class="text-center">商品一覧(全<%= @items.count %>件)</h2>
-<%= render 'index', items: @items %>
+<div class='container px-5 px-sm-0'>
+
+  <div class='row'>
+    <div class='col-md-8 offset-md-1 item_index'>
+      <h2>商品一覧</h2>(全<%= @sale_item.count %>件)
+      <%= render 'index', items: @items %>
+      
+      <div class="text-center"><%= paginate @items %></div>
+    </div>
+  </div>
+</div>
