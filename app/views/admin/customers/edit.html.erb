@@ -56,13 +56,13 @@
     <tr class="row pb-3">
       <th class="col-md-2">会員ステータス</th>
       <td class="col-md-10">
-        <span class="admin-is_deleted-radio_button mr-3">
-          <%= f.radio_button :is_deleted, true %>
-          <%= f.label :is_deleted, '無効', value: true %>
-        </span>
         <span class="admin-is_deleted-radio_button">
           <%= f.radio_button :is_deleted, false %>
           <%= f.label :is_deleted, '有効', value: false %>
+        </span>
+        <span class="admin-is_deleted-radio_button mr-3">
+          <%= f.radio_button :is_deleted, true %>
+          <%= f.label :is_deleted, '退会', value: true %>
         </span>
       </td>
     </tr>
