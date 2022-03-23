@@ -17,7 +17,7 @@ class Customer < ApplicationRecord
 
   # 別々で保存された名前をfull_nameで合わせて定義
   def full_name
-    self.last_name + self.first_name
+    self.first_name + self.last_name
   end
 
   def full_name_kana

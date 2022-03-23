@@ -59,6 +59,11 @@ footer{
   background-color: #f0f0f0;
 }
 
+#notice {
+  text-align: center;
+  background-color: #AAFFFF;
+}
+
 
 @media (max-width: 1080px) and (min-width: 0px){
 
