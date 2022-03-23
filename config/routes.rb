@@ -19,14 +19,15 @@ Rails.application.routes.draw do
    namespace :public do
    resources :genres, only: [:show]
    resources :addresses, only: [:index, :create, :edit, :update, :destroy]
-   resources :cart_items, only: [:index, :show, :destroy, :edit, :create, :update]
-   delete '/cart_items/all_destroy' => 'cart_items#all_destroy'
+   resources :cart_items, only: [:index, :show, :destroy, :edit, :create, :update] do
+   collection do
+    delete 'destroy_all'
+    end
+  end
    resources :items, only: [:index, :show]
    resources :orders, only: [:index, :show, :new, :confirm, :create, :thanks]
-   post '/confirm' => 'orders#confirm'
-
+   post '/orders/confirm' => 'orders#confirm'
    get '/thanks' => 'orders#thanks'
-   resources :order_details, only: [:index, :show, :create]
   resource :customers, only: [:show, :quit, :out, :edit, :update]
    get '/quit' => 'customers#quit', as: 'quit'
    patch '/withdrawal' => 'customers#withdrawal', as: 'withdrawal'

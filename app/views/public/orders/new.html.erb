@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="col-md-10">
       <span class="bg-light px-2 h4">注文情報入力</span>
-        <%= form_with model: @order, url: public_confirm_path, local:true do |f| %>
+        <%= form_with model: @order, url: public_orders_confirm_path, local:true do |f| %>
 
           <div class="select_payment_method">
             <span>支払い方法</span><br>
@@ -31,12 +31,12 @@
             <%= f.text_field :name, placeholder:"令和道子", class: "text_field" %>
 
           </div>
-          </div>
+
           <div class="col-md-8 btn-down">
             <%= f.submit "確認画面へ進む" , class:"btn btn-primary" %>
           </div>
           <% end %>
-    </div>
+    </div></div>
   </div>
 </div>
 
