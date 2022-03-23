@@ -2,8 +2,9 @@ class Order < ApplicationRecord
 
   belongs_to :customer
   has_many :order_details
-
-
+  validates :postal_code, presence: true, length: {is: 7}
+  validates :address, presence: true, length: { maximum: 60 }
+  validates :name, presence: true, length: { maximum: 20 }
 
   enum payment_method: {
     credit_card: 0,
@@ -18,7 +19,7 @@ class Order < ApplicationRecord
   }
 
   def address_display
-  '〒' + postal_code + ' ' + address + ' ' + name
+    '〒' + postal_code + ' ' + address + ' ' + name
   end
 
 
