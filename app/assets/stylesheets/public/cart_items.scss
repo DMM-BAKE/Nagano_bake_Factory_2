@@ -1,3 +1,11 @@
 // Place all the styles related to the public/cart_items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.destroy_all {
+  margin-left: 520px;
+}
+@media screen and (max-width:768px) {
+  .destroy_all {
+  margin-left: 0px;
+}
+}

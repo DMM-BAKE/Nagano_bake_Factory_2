@@ -1,5 +1,44 @@
-<h1>Public::Homes#top</h1>
-<p>Find me in app/views/public/homes/top.html.erb</p>
-
-<%= link_to "ログアウト", destroy_customer_session_path, method: :delete %>
-<%= link_to "サインイン", new_customer_registration_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="img-wrap">
+        <img class="img" src="assets/パンケーキ.jpg">
+        <p>NAGANO CAKE</p>
+      </div>
+        <div class="row">
+          <div class="col-md-10 mt-5">
+            <h4 class="main-message">
+              ようこそ、<span id="top-title">NaganoCakeへ！</span><br>
+            </h4>
+              <h4 class="sub-message" style="font-family: HiraMinPro-W6">
+                このサイトは、ケーキ販売のECサイトになります。<br>
+                会員でない方も商品の閲覧はできますが、購入には会員登録が必要になります。
+                会員登録は<%= link_to"こちら", new_customer_registration_path, style: "text-decoration:none;" %>
+              </h4>
+          </div>
+          <div class="col-md-2">
+            <%= render 'public/items/genre', genres: @genres %>
+          </div>
+        </div>
+        <div class="row">
+          <h3 class="col-12 text-center mt-5">新着商品</h3>
+          <div class="col" id="top-items">
+          <% @items.last(4).each do |item| %>
+          <% if item.item_status == true %>
+          <div class="col">
+            <%= link_to public_item_path(item.id) ,style: "color: black; text-decoration: none;", data: {"turbolinks" => false} do %>
+            <%= image_tag item.get_image(250, 600) %><br>
+            <%= item.name %><br>
+            ¥<%= item.add_tax_price.to_s(:delimited, delimiter: ',') %>
+            <% end %>
+          </div>
+          <% end %>
+          <% end %>
+          </div>
+          <h4 class="item-index">
+          <%= link_to "商品一覧へ>>", public_items_path %>
+          </h4>
+          </div>
+    </div>
+   </div>
+</div>

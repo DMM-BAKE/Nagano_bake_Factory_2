@@ -2,8 +2,61 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+// 退会ページ
 .quit-message {
 text-align: center;
 margin-top: 200px;
 }
 
+//編集ページ
+.edit-title {
+  margin-left: 80px;
+}
+
+edit-form{
+  padding:30px 50px;
+}
+
+edit-form dl dt{
+  width: 165px;
+  padding:10px 0;
+  float:left;
+  clear:both;
+  margin-left: 80px;
+}
+
+edit-form dl dd{
+  padding:10px 0;
+}
+
+.buuton {
+  margin-left: 80px;
+}
+
+.item-index {
+  font-family: HiraMinPro-W6;
+  text-decoration: none;
+  text-align: right;
+  display: inline-block;
+}
+
+
+// 詳細ページ、テーブル
+table.company {
+width: 100%;
+margin: 0 auto;
+border-collapse: separate;
+border-spacing: 0px 15px;
+font-size: 18px;
+}
+
+table.company th,
+table.company td {
+padding: 10px;
+}
+
+table.company td {
+background: #f8f8f8;
+width: 360px;
+padding-left: 20px;
+}
