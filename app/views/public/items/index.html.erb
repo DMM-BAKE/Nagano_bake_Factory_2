@@ -7,7 +7,15 @@
           <%= render 'public/items/genre', genres: @genres %>
         </div>
         <div class="col-md-9">
-          <%= render 'index', items: @items %>
+          <div class="items">
+            <% @items.each do |item| %>
+            <div class="item-content">
+              <%= image_tag item.get_image(400, 400) %><br>
+              <%= link_to item.name, public_item_path(item.id) %><br>
+              ¥<%= item.price.to_s(:delimited, delimiter: ',') %>
+            </div>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
