@@ -13,17 +13,13 @@
  *= require_tree .
  *= require_self
  */
- @import "signin";
- 
+
 * {
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-*::before,
-*::after {
-    box-sizing: inherit; /* 継承 */
-}
- 
 html {
   position: relative;
   min-height: 100%;

@@ -1,9 +1,11 @@
 <div class="container">
   <div class="row justify-content-center ">
     <div class="col-md-6">
+      <div class="text-danger">
+        <%= render 'layouts/errors', obj: @customer %>
+      </div>
       <h2 class="text-center mt-2" style="font-family: HiraMinPro-W6;">会員情報編集</h2>
       <%= form_with model: @customer, url: public_customers_path, method: :PATCH do |f| %>
-
       <div class="row form-group mt-5">
         <%= f.label :"名前", class:"col-md-4 col-form-label text-md-right fw-bold" %>
       <div class="col-md-3 px-md-0">
