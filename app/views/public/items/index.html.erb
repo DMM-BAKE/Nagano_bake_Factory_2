@@ -1,2 +1,5 @@
 <h2 class="text-center">商品一覧(全<%= @items.count %>件)</h2>
+<div class="col-md-2">
+ <%= render 'public/items/genre', genres: @genres %>
+ </div>
 <%= render 'index', items: @items %>

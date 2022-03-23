@@ -1,18 +1,27 @@
-<div class="row">
+<div class="container">
+  <div class="row justify-content-center">
 	<div class="col-md-12">
-  <h2><%= @genre.name %>一覧(全<%= @items.count %>件)</h2>
-		<div class="ganre-img">
-			<% @items.each do |item| %>
-			<% if item.item_status == true %>
-				<div style="padding-right: 0px; padding-left: 0px; margin: 10px 0;">
-					<%= link_to public_item_path(item.id) ,style: "color: black; text-decoration: none;", data: {"turbolinks" => false} do %>
-            <%= image_tag item.get_image(600, 600) %><br>
-            <%= item.name %><br>
-            ¥<%= item.add_tax_price.to_s(:delimited, delimiter: ',') %>
-					<% end %>
-				<% end %>
-				</div>
-			<% end %>
+      <h2 class="text-center mt-2" style="font-family: HiraMinPro-W6;"><%= @genre.name %>一覧(全<%= @items.count %>件)</h2>
+      <div class="row">
+      	<div class="col-md-2">
+          <%= render 'public/items/genre', genres: @genres %>
+        </div>
+        <div class="col-md-10">
+        <div class="ganre-img">
+		  <% @items.each do |item| %>
+		  <% if item.item_status == true %>
+		<div style="padding-right: 0px; padding-left: 0px; margin: 10px 0;">
+		  <%= link_to public_item_path(item.id) ,style: "color: black; text-decoration: none;", data: {"turbolinks" => false} do %>
+          <%= image_tag item.get_image(400, 400) %><br>
+          <%= item.name %><br>
+          ¥<%= item.add_tax_price.to_s(:delimited, delimiter: ',') %>
+		  <% end %>
+		  <% end %>
 		</div>
+		  <% end %>
+		</div>
+        </div> 
+      </div>
 	</div>
+  </div>
 </div>
