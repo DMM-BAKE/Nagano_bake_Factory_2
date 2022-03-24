@@ -1,6 +1,6 @@
 class Admin::GenresController < ApplicationController
    before_action :authenticate_admin!
-   
+
   def index
     @genres = Genre.all
     @genre = Genre.new
@@ -23,7 +23,7 @@ class Admin::GenresController < ApplicationController
   def update
     @genre = Genre.find(params[:id])
     if @genre.update(genre_params)
-      redirect_to admin_genres_path, notice: "ジャンルの情報をを更新しました"
+      redirect_to admin_genres_path, notice: "ジャンルの情報を更新しました"
     else
       render :edit
     end

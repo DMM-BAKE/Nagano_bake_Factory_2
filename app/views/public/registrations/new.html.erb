@@ -8,11 +8,11 @@
         <%= f.label :"名前", class:"col-md-3 col-form-label text-md-right fw-bold" %>
         <%= f.label :"(姓)", class:"col-md-1 col-form-label text-md-right fw-bold" %>
       <div class="col-md-3 px-md-0">
-        <%= f.text_field :first_name, placeholder: "長野", class:"form-control" %>
+        <%= f.text_field :first_name, placeholder: "長野", class:"form-control", autocomplete: "off" %>
       </div>
         <%= f.label :"(名)", class:"col-md-1 col-form-label text-md-right fw-bold" %>
       <div class="col-md-3 px-md-0">
-        <%= f.text_field :last_name, placeholder: "景子", class:"form-control" %>
+        <%= f.text_field :last_name, placeholder: "景子", class:"form-control", autocomplete: "off"  %>
       </div>
       </div>
 
@@ -20,46 +20,46 @@
         <%= f.label :"フリガナ", class:"col-md-3 col-form-label text-md-right fw-bold" %>
         <%= f.label :"(セイ)", class:"col-md-1 col-form-label text-md-right fw-bold" %>
       <div class="col-md-3 px-md-0">
-        <%= f.text_field :first_name_kana, placeholder: "ナガノ", class:"form-control" %>
+        <%= f.text_field :first_name_kana, placeholder: "ナガノ", class:"form-control", autocomplete: "off" %>
       </div>
         <%= f.label :"(メイ)", class:"col-md-1 col-form-label text-md-right fw-bold" %>
       <div class="col-md-3 px-md-0">
-        <%= f.text_field :last_name_kana, placeholder: "ケイコ", class:"form-control" %>
+        <%= f.text_field :last_name_kana, placeholder: "ケイコ", class:"form-control", autocomplete: "off" %>
       </div>
       </div>
 
       <div class="row form-group mt-2">
         <%= f.label :"メールアドレス", class:"col-md-4 col-form-label text-md-right fw-bold" %>
       <div class="col-md-7 px-md-0">
-        <%= f.text_field :email, placeholder: "sample@example", class:"form-control" %>
+        <%= f.text_field :email, placeholder: "sample@example", class:"form-control", autocomplete: "off"  %>
       </div>
       </div>
 
       <div class="row form-group mt-2">
         <%= f.label :"郵便番号", class:"col-md-4 col-form-label text-md-right fw-bold" %>
       <div class="col-md-3 px-md-0">
-        <%= f.text_field :postal_code, placeholder: "1234567", class:"form-control" %>
+        <%= f.text_field :postal_code, placeholder: "1234567", class:"form-control", autocomplete: "off"  %>
       </div>
       </div>
 
       <div class="row form-group mt-2">
         <%= f.label :"住所", class:"col-md-4 col-form-label text-md-right fw-bold" %>
       <div class="col-md-7 px-md-0">
-        <%= f.text_field :address, placeholder: "東京都渋谷区宇田川町1-1", class:"form-control" %>
+        <%= f.text_field :address, placeholder: "東京都渋谷区宇田川町1-1", class:"form-control", autocomplete: "off"  %>
       </div>
       </div>
 
       <div class="row form-group mt-2">
         <%= f.label :"電話番号", class:"col-md-4 col-form-label text-md-right fw-bold" %>
       <div class="col-md-3 px-md-0">
-        <%= f.text_field :phone_number, placeholder: "11122223333", class:"form-control" %>
+        <%= f.text_field :phone_number, placeholder: "11122223333", class:"form-control", autocomplete: "off"  %>
       </div>
       </div>
 
       <div class="row form-group mt-2">
         <%= f.label :"パスワード(６文字以上)", class:"col-md-4 col-form-label text-md-right fw-bold" %>
       <div class="col-md-3 px-md-0">
-        <%= f.text_field :password, autocomplete: "off", placeholder: "パスワードを入力", class:"form-control" %>
+        <%= f.text_field :password, autocomplete: "off", placeholder: "パスワードを入力", class:"form-control", autocomplete: "off"  %>
       </div>
       </div>
 
