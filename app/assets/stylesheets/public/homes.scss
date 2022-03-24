@@ -7,7 +7,7 @@
   overflow: hidden;
   height: 500px;
 }
- 
+
 .img-wrap p {
   position: absolute;
   top: 50%;
@@ -23,6 +23,7 @@
 
 .img-wrap img {
   width: 100%;
+  margin-top: 50px;
   }
 
 .img-wrap:before {
@@ -48,7 +49,6 @@
   position: relative;
   overflow: hidden;
   height: 650px;
-  // margin-top: 150px;
   animation-name: blur;
   animation-duration: 3s;
   }
