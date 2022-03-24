@@ -14,7 +14,7 @@
  *= require_self
  */
  @import "signin";
- 
+
 * {
     box-sizing: border-box;
 }
@@ -23,7 +23,7 @@
 *::after {
     box-sizing: inherit; /* 継承 */
 }
- 
+
 html {
   position: relative;
   min-height: 100%;
@@ -39,7 +39,7 @@ header{
   width: 100%;
   background-color: #696969;
   top: 0;
-  margin: 0;
+  margin-bottom: -16px;
 }
 
 footer{
@@ -63,6 +63,10 @@ footer{
   background-color: #f0f0f0;
 }
 
+#notice {
+  text-align: center;
+  background-color: #AAFFFF;
+}
 
 @media (max-width: 1080px) and (min-width: 0px){
 
