@@ -1,2 +1,66 @@
-<h1>Public::Customers#edit</h1>
-<p>Find me in app/views/public/customers/edit.html.erb</p>
+<div class="container">
+  <div class="row justify-content-center ">
+    <div class="col-md-6">
+      <div class="text-danger">
+        <%= render 'layouts/errors', obj: @customer %>
+      </div>
+      <h2 class="text-center mt-2" style="font-family: HiraMinPro-W6;">会員情報編集</h2>
+      <%= form_with model: @customer, url: public_customers_path, method: :PATCH do |f| %>
+      <div class="row form-group mt-5">
+        <%= f.label :"名前", class:"col-md-4 col-form-label text-md-right fw-bold" %>
+      <div class="col-md-3 px-md-0">
+        <%= f.text_field :first_name, autofocus: true, class:"form-control" %>
+      </div>
+      <div class="col-md-3 px-md-0">
+        <%= f.text_field :last_name, autofocus: true, class:"form-control" %>
+      </div>
+      </div>
+
+      <div class="row form-group mt-5">
+        <%= f.label :"フリガナ", class:"col-md-4 col-form-label text-md-right fw-bold" %>
+      <div class="col-md-3 px-md-0">
+        <%= f.text_field :first_name_kana, autofocus: true, class:"form-control" %>
+      </div>
+      <div class="col-md-3 px-md-0">
+        <%= f.text_field :last_name_kana, autofocus: true, class:"form-control" %>
+      </div>
+      </div>
+
+      <div class="row form-group mt-5">
+        <%= f.label :"郵便番号", class:"col-md-4 col-form-label text-md-right fw-bold" %>
+      <div class="col-md-3 px-md-0">
+        <%= f.text_field :postal_code, autofocus: true, class:"form-control" %>
+      </div>
+      </div>
+
+      <div class="row form-group mt-5">
+        <%= f.label :"住所", class:"col-md-4 col-form-label text-md-right fw-bold" %>
+      <div class="col-md-6 px-md-0">
+        <%= f.text_field :address, autofocus: true, class:"form-control" %>
+      </div>
+      </div>
+
+      <div class="row form-group mt-5">
+        <%= f.label :"電話番号", class:"col-md-4 col-form-label text-md-right fw-bold" %>
+      <div class="col-md-3 px-md-0">
+        <%= f.text_field :phone_number, autofocus: true, class:"form-control" %>
+      </div>
+      </div>
+
+      <div class="row form-group mt-5">
+        <%= f.label :"メールアドレス", class:"col-md-4 col-form-label text-md-right fw-bold" %>
+      <div class="col-md-6 px-md-0">
+        <%= f.text_field :email, autofocus: true, class:"form-control" %>
+      </div>
+      </div>
+
+      <div class="row mt-5">
+        <%= f.submit "編集内容を保存", class: "btn btn-sm btn-primary text-light col-md-3" %>
+      <div class="col-md-3">
+        <%= link_to "退会する", public_quit_path, class: "btn btn-sm btn-danger text-light" %>
+      </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

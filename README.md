@@ -1,24 +1,56 @@
-# README
+# Nagano_bake_Factory
+長野県にある小さな洋菓子店「ながのCAKE」の商品を通販するためのECサイト開発。
+![2022-03-26__5_](https://user-images.githubusercontent.com/98795405/160219171-0d1eaeb0-ee20-4a55-86d1-cb05db256c77.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 制作期間
+2022/3/12~3/25
 
-Things you may want to cover:
+### 制作メンバー
+- ヤマ
+- トロ
+- チーズ
+- クマ
 
-* Ruby version
+### 機能一覧
+- 会員側
+  - ログイン機能
+  - ログアウト機能 
+  - 商品一覧表示機能 
+  - 商品詳細情報表示機能 
+  - カート追加機能
+  - カート一覧機能 
+  - 注文機能
+  - 退会機能
+  - 配送先追加・編集機能
+  - 注文履歴一覧表示機能 
+  - 注文履歴詳細表示機能
+- 管理者側 
+  - 会員情報編集機能
+  - 退会機能
+  - 注文履歴一覧表示機能 
+  - 注文履歴詳細表示機能
+  - ログイン機能
+  - ログアウト機能 
+  - 注文履歴一覧表示機能
+  - 注文履歴詳細表示機能
+  - 顧客一覧表示機能 
+  - 顧客詳細情報表示機能
+  - 商品一覧表示機能 
+  - 商品詳細情報表示機能
+  - 商品情報変更機能 
+  - ジャンル設定機能 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### 開発環境
+- AWS cloud9
+- ruby 2.6.3
+- rails 6.1.5
+- sqlite3 1.4
+- Gem
+  - devise
+  - kaminari
+  - image_processing
+  - acts-as-taggable-on
+  - dotenv-rails
+  - jquery-rails
+  - enum_help
+  - pry-byebug
